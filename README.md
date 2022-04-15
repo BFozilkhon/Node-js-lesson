@@ -3,7 +3,16 @@
 | No. | Savollar                                                                                                                                                                                                                        |
 | --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |     | **Core Node js**                                                                                                                                                                                                                   |
-
+| 1   | [React nima ?](#what-is-react)                                                                                                                                                                                                   |
+| 2   | [Reactning asosiy xususiyatlari qanday?](#what-are-the-major-features-of-react)                                                                                                                                                  |
+| 3   | [JSX nima ?](#what-is-jsx)                                                                                                                                                                                                       |
+| 4   | [Element va komponent o'rtasidagi farq nima?](#what-is-the-difference-between-element-and-component)                                                                                                                             |
+| 5   | [React-da komponentlarni qanday yaratish mumkin?](#how-to-create-components-in-react)                                                                                                                                            |
+| 6   | [Qachon function Component orginga Class Component ishlatiladi ?](#when-to-use-a-class-component-over-a-function-component)                                                                                                      |
+| 7   | [Pure Component nima ?](#what-are-pure-components)                                                                                                                                                                               |
+| 8   | [React state nima ?](#what-is-state-in-react)                                                                                                                                                                                    |
+| 9   | [Reactda proplar nima ?](#what-are-props-in-react)                                                                                                                                                                               |
+| 10  | [State va proplarni farqalari nima ?](#what-is-the-difference-between-state-and-props)                                                                                                                                           |
 
 
 # 1.Package.json fileni yaratib olish
