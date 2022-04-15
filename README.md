@@ -116,11 +116,11 @@ console.log(person.hello()) // hello fozil 32
 
 Birinchi bolib pathni import qilib olamiz `const path = require('path')`
 
-1.`__dirname` - bu papkani yolini korsatib beradi
-2.`__filename` - bu fileni yolini korsatib beradi
-3.`path.basename(__filename)` - BaseName metodi fayl nomini qaytaradi **path.js**
-4.`path.extname(__filename)` - Extname bu file qanday dasturlash tilida yozilayotganini qaytaradi **.js**
-5.`path.parse(__filename)` - parse tepadagi hammasini qaytaradi
+# 1.`__dirname` - bu papkani yolini korsatib beradi
+# 2.`__filename` - bu fileni yolini korsatib beradi
+# 3.`path.basename(__filename)` - BaseName metodi fayl nomini qaytaradi **path.js**
+# 4.`path.extname(__filename)` - Extname bu file qanday dasturlash tilida yozilayotganini qaytaradi **.js**
+# 5.`path.parse(__filename)` - parse tepadagi hammasini qaytaradi
 
 ```bash
 {
@@ -133,7 +133,7 @@ Birinchi bolib pathni import qilib olamiz `const path = require('path')`
 
 ```
 
-6.`path.join(__dirname, 'database', 'mongodb', 'db.js')` -> Join bu faylni nomiga yana nom qoshib ketadi.
+# 6.`path.join(__dirname, 'database', 'mongodb', 'db.js')` -> Join bu faylni nomiga yana nom qoshib ketadi.
 
 ```bash
 C:\Users\hp\Desktop\node js\modules\database\mongodb\db.js
