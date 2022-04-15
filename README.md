@@ -1,3 +1,11 @@
+### Table of Contents
+
+| No. | Savollar                                                                                                                                                                                                                        |
+| --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|     | **Core Node js**                                                                                                                                                                                                                   |
+
+
+
 # 1.Package.json fileni yaratib olish
 
 Birinchi bolib terminalda `npm init` qilinadi va filega **name, description, keywords, author** yozishimiz kerak boladi.Keyin **yes** ni bosishimiz kerak boladi.
