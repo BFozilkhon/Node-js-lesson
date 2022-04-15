@@ -3,19 +3,23 @@
 | No. | Savollar                                                                                                                                                                                                                        |
 | --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |     | **Core Node js**                                                                                                                                                                                                                   |
-| 1   | [React nima ?](#what-is-react)                                                                                                                                                                                                   |
-| 2   | [Reactning asosiy xususiyatlari qanday?](#what-are-the-major-features-of-react)                                                                                                                                                  |
-| 3   | [JSX nima ?](#what-is-jsx)                                                                                                                                                                                                       |
-| 4   | [Element va komponent o'rtasidagi farq nima?](#what-is-the-difference-between-element-and-component)                                                                                                                             |
-| 5   | [React-da komponentlarni qanday yaratish mumkin?](#how-to-create-components-in-react)                                                                                                                                            |
-| 6   | [Qachon function Component orginga Class Component ishlatiladi ?](#when-to-use-a-class-component-over-a-function-component)                                                                                                      |
-| 7   | [Pure Component nima ?](#what-are-pure-components)                                                                                                                                                                               |
-| 8   | [React state nima ?](#what-is-state-in-react)                                                                                                                                                                                    |
-| 9   | [Reactda proplar nima ?](#what-are-props-in-react)                                                                                                                                                                               |
-| 10  | [State va proplarni farqalari nima ?](#what-is-the-difference-between-state-and-props)                                                                                                                                           |
+| 1   | [Node js nima ?](#node-js-nima)                                                                                                                                                                                                   |
+| 2   | [Package json nima va u qanday yaratiladi?](#package-json-nima-va-u-qanday-yaratiladi)                                                                                                                                                  |
+| 3   | [Qanday qilib Node Modules va Package-lock.json fileni o`rnatib olish mumkin ?](#qanday-qilib-node-modules-va-package-lock-json-yaratiladi)                                                                                                                                                                                                       |
+| 4   | [Node js da import va export qanday qilinadi?](#node-jsda-import-va-export-qanday-qilinadi)                                                                                                                             |
+| 5   | [Path module nima?](#path-module-nima)                                                                                                                                            |
+| 6   | [FS (File system) module nima?](#fs-module-nima)                                                                                                      |
+| 7   | [Os (Operation system) module nima ?](#os-module-nima)                                                                                                                                                                               |
+| 8   | [Events module nima ?](#events-module-nima)                                                                                                                                                                                    |
+| 9   | [URL module nima ?](#url-module-nima)                                                                                                                                                                               |
+| 10  | [HTTP module nima ?](#http-module-nima)                                                                                                                                           |
+| 11  | [Nodemon qanday kutubxona ?](#nodemon-qanday-kutubxona)                                                                                                                                           |
+| 12  | [UUID qanday kutubxona ?](#uuid-qanday-kutubxona)                                                                                                                                           |
+# 1. Node js nima ?
 
+Node js bu Javascript dasturlash tilini bakend bilan integratsiya qildirish uchun kerak boladigan qurilma hisoblanadi 
 
-# 1.Package.json fileni yaratib olish
+# 2.Package json nima va u qanday yaratiladi?
 
 Birinchi bolib terminalda `npm init` qilinadi va filega **name, description, keywords, author** yozishimiz kerak boladi.Keyin **yes** ni bosishimiz kerak boladi.
 
@@ -37,7 +41,7 @@ Birinchi bolib terminalda `npm init` qilinadi va filega **name, description, key
 }
 ```
 
-# 2.Node Modules va Package-lock.json fileni o`rnatib olish
+# 3.Qanday qilib Node Modules va Package-lock.json fileni o`rnatib olish mumkin ?
 
 `npm install nodemon --save-dev` comandasi orqali  node modules o'rnatiladi.Sababi hamma packagelarimiz shu papkaga o'rnatiladi. **--save-dev** esa bu proyektimizga local holatda ornatib beradi va u `devDependencies` ga borib o'rnaydi.Agar  **--save-dev** ishlatmasak to'g'ridan to'g'ri `dependencies` ga borib qoshiladi.
 
@@ -65,12 +69,12 @@ Birinchi bolib terminalda `npm init` qilinadi va filega **name, description, key
 }
 ```
 
-# 3.Import va Export 
+# 4.Node js da import va export qanday qilinadi?
 
 Demak **Import** qilish uchun `module.exports = Variable` dan foydalaniladi.**Export** qilish uchun `var user = require(./user.js)` shu shaklda olinadi.
 
-
-## 1.Misollar Objectda
+1
+### Misollar Objectda
 
 **Fayldan Import Qilish**
 ```bash 
@@ -95,8 +99,8 @@ console.log(user.name) // fozil
 
 ```
 
-
-## 1.Misollar Classlarda
+2.
+### Misollar Classlarda
 
 **Fayldan Import Qilish**
 ```bash 
@@ -129,15 +133,20 @@ console.log(person.hello()) // hello fozil 32
 ```
 
 
-# 4.Path module
+# 5.Path module nima?
 
 Birinchi bolib pathni import qilib olamiz `const path = require('path')`
 
-### 1. `__dirname` - bu papkani yolini korsatib beradi
-### 2. `__filename` - bu fileni yolini korsatib beradi
-### 3. `path.basename(__filename)` - BaseName metodi fayl nomini qaytaradi ``path.js``
-### 4. `path.extname(__filename)` - Extname bu file qanday dasturlash tilida yozilayotganini qaytaradi ``.js``
-### 5. `path.parse(__filename)` - parse tepadagi hammasini qaytaradi
+1.
+###  `__dirname` - bu papkani yolini korsatib beradi
+2.
+###  `__filename` - bu fileni yolini korsatib beradi
+3.
+###  `path.basename(__filename)` - BaseName metodi fayl nomini qaytaradi ``path.js``
+4.
+###  `path.extname(__filename)` - Extname bu file qanday dasturlash tilida yozilayotganini qaytaradi ``.js``
+5.
+###  `path.parse(__filename)` - parse tepadagi hammasini qaytaradi
 
 ```bash
 {
@@ -149,20 +158,21 @@ Birinchi bolib pathni import qilib olamiz `const path = require('path')`
 }
 
 ```
-
-### 6. `path.join(__dirname, 'database', 'mongodb', 'db.js')` -> Join bu faylni nomiga yana nom qoshib ketadi.
+6.
+###  `path.join(__dirname, 'database', 'mongodb', 'db.js')` -> Join bu faylni nomiga yana nom qoshib ketadi.
 
 ```bash
 C:\Users\hp\Desktop\node js\modules\database\mongodb\db.js
 ```
 
-# 5.Fs -> File system module
+# 6.Fs (File system) module nima?
 
 Bu module orqali biz fileni yarata olamiz, filega malumotlar qosha olamiz, fileni ichidagi malumotlarni olamiz, fileni nomini o`zgartira olamiz.
 
 Birinchi bo'lib file systemni **fs** import qilishimiz kerak bo'ladi `const fs = require('fs')` 
 
-### 1. Papka yaratish uchun `fs.mkdir()` dan foydalanamiz.
+1.
+###  Papka yaratish uchun `fs.mkdir()` dan foydalanamiz.
 
 ```bash
 
@@ -172,8 +182,8 @@ fs.mkdir(path.join(__dirname, '/papka'), {}, err => {
 })
 
 ```
-
-### 2. File yaratish uchun `fs.writeFile()` dan foydalanamiz.
+2.
+###  File yaratish uchun `fs.writeFile()` dan foydalanamiz.
 
 ```bash
 
@@ -183,8 +193,8 @@ fs.writeFile(path.join(__dirname, '/papka', 'text.txt'), 'node js orqali yaratil
  })
 
 ```
-
-### 3. Bosh bir fayl ichidagi malumotni ozgartirish , unga yengi malumot qo'shish `fs.appendFile()` orqali bo'ladi
+3.
+###  Bosh bir fayl ichidagi malumotni ozgartirish , unga yengi malumot qo'shish `fs.appendFile()` orqali bo'ladi
 
 ```bash
 
@@ -194,8 +204,8 @@ fs.appendFile(path.join(__dirname, '/papka', 'text.txt'), ' hello world', err =>
 })
 
  ```
-
-### 4.Fileni ichidagi malumotlarni olish uchun `fs.readFile()` dan foydalanamiz 
+4.
+### Fileni ichidagi malumotlarni olish uchun `fs.readFile()` dan foydalanamiz 
 
 ```bash
 
@@ -205,8 +215,8 @@ fs.readFile(path.join(__dirname, '/papka', 'text.txt'), 'utf8', (err, data) => {
 })
 
 ```
-
-### 5.Fileni nomini o'zgartirish uchun `fs.rename()` dan foydalanamiz
+4.
+### Fileni nomini o'zgartirish uchun `fs.rename()` dan foydalanamiz
 
 ```bash 
 
@@ -217,8 +227,50 @@ fs.rename(path.join(__dirname, '/papka', 'expensive.txt'), path.join(__dirname, 
 
 ```
 
-# 6.Os -> Operation system module
-# 7.Events module
-# 8.URL module
-# 9.HTTP module
-# 10.Nodemon module
+# 7.Os (Operation system) module nima ?
+
+Bu bizga kampyuterning umumiy malumotlarini berib turadi.Masalan hotira, operatsion system, core...
+OS ni ishlatishimiz uchun uni import qilishimiz kerak `var os = require('os')`
+
+1.
+### `os.platform()` -> Bu platformani qaysi operatsion sistemada ishlayotganini korsatib beradi. `windows32`
+
+2.
+### `os.arch()` -> Bu kompyuter bitlarini chiqarib beradi `x64`
+
+3.
+### `os.cpus()` -> Bu platforma Core haqida malumot beradi
+
+```bash 
+
+[
+  {
+    model: 'AMD Ryzen 5 5500U with Radeon Graphics         ',
+    speed: 2096,
+    times: {
+      user: 12691968,
+      nice: 0,
+      sys: 11933734,
+      idle: 240311203,
+      irq: 1927625
+    }
+  },
+  }
+
+```
+
+4.
+### `os.freemem()` -> Bu Operatsion systemada qancha bosh joy bor shu ko'rsatadi `539705344`
+
+5.
+### `os.totalmem()` -> Bu kompyuterni umumiy hotirasini aniqlab beradi `7886458880`
+
+
+6.
+### `os.uptime()` -> Bu Operation sistema ishga tushganiga qancha bo'lgani haqida malumot beradi `539815`
+
+# 8.Events module nima ?
+# 9.URL module nima ?
+# 10.HTTP module nima ?
+# 11.Nodemon qanday kutubxona ?
+# 12.UUID qanday kutubxona ?
