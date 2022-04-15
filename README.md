@@ -116,11 +116,11 @@ console.log(person.hello()) // hello fozil 32
 
 Birinchi bolib pathni import qilib olamiz `const path = require('path')`
 
-### 1.`__dirname` - bu papkani yolini korsatib beradi
-### 2.`__filename` - bu fileni yolini korsatib beradi
-### 3.`path.basename(__filename)` - BaseName metodi fayl nomini qaytaradi **path.js**
-### 4.`path.extname(__filename)` - Extname bu file qanday dasturlash tilida yozilayotganini qaytaradi **.js**
-### 5.`path.parse(__filename)` - parse tepadagi hammasini qaytaradi
+### 1. `__dirname` - bu papkani yolini korsatib beradi
+### 2. `__filename` - bu fileni yolini korsatib beradi
+### 3. `path.basename(__filename)` - BaseName metodi fayl nomini qaytaradi ``path.js``
+### 4. `path.extname(__filename)` - Extname bu file qanday dasturlash tilida yozilayotganini qaytaradi ``.js``
+### 5. `path.parse(__filename)` - parse tepadagi hammasini qaytaradi
 
 ```bash
 {
@@ -133,13 +133,73 @@ Birinchi bolib pathni import qilib olamiz `const path = require('path')`
 
 ```
 
-### 6.`path.join(__dirname, 'database', 'mongodb', 'db.js')` -> Join bu faylni nomiga yana nom qoshib ketadi.
+### 6. `path.join(__dirname, 'database', 'mongodb', 'db.js')` -> Join bu faylni nomiga yana nom qoshib ketadi.
 
 ```bash
 C:\Users\hp\Desktop\node js\modules\database\mongodb\db.js
 ```
 
 # 5.Fs -> File system module
+
+Bu module orqali biz fileni yarata olamiz, filega malumotlar qosha olamiz, fileni ichidagi malumotlarni olamiz, fileni nomini o`zgartira olamiz.
+
+Birinchi bo'lib file systemni **fs** import qilishimiz kerak bo'ladi `const fs = require('fs')` 
+
+### 1. Papka yaratish uchun `fs.mkdir()` dan foydalanamiz.
+
+```bash
+
+fs.mkdir(path.join(__dirname, '/papka'), {}, err => {
+    if(err) throw err
+    console.log('Papka yaratildi...')
+})
+
+```
+
+### 2. File yaratish uchun `fs.writeFile()` dan foydalanamiz.
+
+```bash
+
+fs.writeFile(path.join(__dirname, '/papka', 'text.txt'), 'node js orqali yaratildi', err => {
+     if(err) throw err
+     console.log('File yaratildi')
+ })
+
+```
+
+### 3. Bosh bir fayl ichidagi malumotni ozgartirish , unga yengi malumot qo'shish `fs.appendFile()` orqali bo'ladi
+
+```bash
+
+fs.appendFile(path.join(__dirname, '/papka', 'text.txt'), ' hello world', err => {
+     if(err) throw err
+     console.log('File yaratildi')
+})
+
+ ```
+
+### 4.Fileni ichidagi malumotlarni olish uchun `fs.readFile()` dan foydalanamiz 
+
+```bash
+
+fs.readFile(path.join(__dirname, '/papka', 'text.txt'), 'utf8', (err, data) => {
+    if(err) throw err
+    console.log(data)
+})
+
+```
+
+### 5.Fileni nomini o'zgartirish uchun `fs.rename()` dan foydalanamiz
+
+```bash 
+
+fs.rename(path.join(__dirname, '/papka', 'expensive.txt'), path.join(__dirname, '/papka', 'example.txt'), err => {
+    if(err) throw err
+    console.log('data')
+} )
+
+```
+
 # 6.Os -> Operation system module
 # 7.Events module
 # 8.URL module
