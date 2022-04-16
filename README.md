@@ -312,14 +312,14 @@ const newUrl = new URL('http://fozilkhon.uz:5000/users/user.html?name=Fozil&stat
 
 ```
 
-1. ## `newUrl.href` -> bu method saytni linkini olib beradi `http://fozilkhon.uz:5000/users/user.html?name=Fozil&status=active`
-2. ## `newUrl.hostname` -> bu method saytni host nameini olib beradi `fozilkhon.uz`
-3. ## `newUrl.host` -> bu method saytni host nameni olib beradi faqat tepadigisi bilan farqi uni porti bilan olib beradi `fozilkhon.uz:5000`
-4. ## `newUrl.pathname` -> bu method saytni domen namedan keyin slash bilan davom etadigan routelarini olib beradi `/users/user.html` 
-5. ## `newUrl.search` -> bu method saytni query parametrini oladi `name=Fozil&status=active` 
-6. ## `newUrl.searchParams` -> bu method saytni queryni object korinishiga otkazish uchun ishlatamiz `URLSearchParams { 'name' => 'Fozil', 'status' => 'active' }`  
-7. ## `newUrl.searchParams.append` -> bu method query parametiga qiymat qoshadi 
-8. ## `newUrl.searchParams.forEach` -> bu method query parametrini siklda aylantirib beradi 
+1. ### `newUrl.href` -> bu method saytni linkini olib beradi `http://fozilkhon.uz:5000/users/user.html?name=Fozil&status=active`
+2. ### `newUrl.hostname` -> bu method saytni host nameini olib beradi `fozilkhon.uz`
+3. ### `newUrl.host` -> bu method saytni host nameni olib beradi faqat tepadigisi bilan farqi uni porti bilan olib beradi `fozilkhon.uz:5000`
+4. ### `newUrl.pathname` -> bu method saytni domen namedan keyin slash bilan davom etadigan routelarini olib beradi `/users/user.html` 
+5. ### `newUrl.search` -> bu method saytni query parametrini oladi `name=Fozil&status=active` 
+6. ### `newUrl.searchParams` -> bu method saytni queryni object korinishiga otkazish uchun ishlatamiz `URLSearchParams { 'name' => 'Fozil', 'status' => 'active' }`  
+7. ### `newUrl.searchParams.append` -> bu method query parametiga qiymat qoshadi 
+8. ### `newUrl.searchParams.forEach` -> bu method query parametrini siklda aylantirib beradi 
 
 ```bash
 const url = require('url')
