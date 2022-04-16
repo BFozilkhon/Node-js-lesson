@@ -360,5 +360,72 @@ newUrl.searchParams.forEach((key, value) => {
 ```
 
 # 10.HTTP module nima ?
+
+HTTP module bu server yaratish uchun kerak boladi.Birinchi navbatda httpni import qilib olamiz `const http = require('http')`. 
+
+1. ### Endilikda serverni yaratish uchun `createServer()`dan foydalanamiz.
+
+`createServer()` o'zini ichiga 1ta arrow fn.va arrow fn ichida 2ta argument oladi.1-request, 2-resolve.***Request*** serverni hamma malumotlarni olib kelib beradi.***Resolve*** bu serverga sorov yuborishimiz.Resolvening ` write(),writeHead(), end(),` methodlari bor.Ohirida esa biz serverni ishlatishimiz kerak.Uning uchun `listen()` dan foydalanamiz.***Listen*** ozini ichiga 2ta arugemt oladi 1-port, 2-arrow fn.
+
+## 1.Misol uchun : 
+
+```bash
+
+const http = require('http')
+
+ const server = http.createServer((req, res) => {
+     res.write('hello node js')
+     res.end()
+ }
+ 
+ server.listen(3000, () => console.log('server port 3000'))
+
+```
+
+## 2.Misol uchun : 
+
+```bash
+const http = require('http')
+const fs = require('fs')
+const path = require('path')
+
+const server = http.createServer((req, res) => {
+    if(req.url == '/'){
+       fs.readFile(path.join(__dirname, 'public', 'index.html'), (err, data) =>{
+           if(err) throw err
+           res.writeHead(200, {'Content-Type': 'text/html'})
+           res.end(data)
+       })
+    }else if(req.url == '/about'){
+        fs.readFile(path.join(__dirname, 'public', 'about.html'), (err, data) =>{
+            if(err) throw err
+           res.writeHead(200, {'Content-Type': 'text/html'})
+            res.end(data)
+        })
+     }
+
+})
+
+const PORT = process.env.PORT || 3000
+
+server.listen(PORT, () => console.log('server run port: ', PORT))
+
+```
+
+
 # 11.Nodemon qanday kutubxona ?
+
+Nodemon bu serverni automatic yengilab beradigan kutubxona hisoblanadi.Uni demak `npm i nodemon -D` qilib olish kerak.**Package.jsonga** kirib script qismini o'zgartiramiz.va endi serverni `npm run dev` qilib yurgazamiz.
+
+```bash
+
+ "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+
+```
+
 # 12.UUID qanday kutubxona ?
+
+UUID bu id generatsiya qilib beradi.Uni biz import qilib 4 versiyasini ishlatishimiz kerak boladi. `uuid.v4()`
