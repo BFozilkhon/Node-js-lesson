@@ -137,16 +137,16 @@ console.log(person.hello()) // hello fozil 32
 
 Birinchi bolib pathni import qilib olamiz `const path = require('path')`
 
-1.
-###  `__dirname` - bu papkani yolini korsatib beradi
-2.
-###  `__filename` - bu fileni yolini korsatib beradi
-3.
-###  `path.basename(__filename)` - BaseName metodi fayl nomini qaytaradi ``path.js``
-4.
-###  `path.extname(__filename)` - Extname bu file qanday dasturlash tilida yozilayotganini qaytaradi ``.js``
-5.
-###  `path.parse(__filename)` - parse tepadagi hammasini qaytaradi
+
+1. ###  `__dirname` - bu papkani yolini korsatib beradi
+
+2. ###  `__filename` - bu fileni yolini korsatib beradi
+
+3. ###  `path.basename(__filename)` - BaseName metodi fayl nomini qaytaradi ``path.js``
+
+4. ###  `path.extname(__filename)` - Extname bu file qanday dasturlash tilida yozilayotganini qaytaradi ``.js``
+
+5. ###  `path.parse(__filename)` - parse tepadagi hammasini qaytaradi
 
 ```bash
 {
@@ -158,8 +158,8 @@ Birinchi bolib pathni import qilib olamiz `const path = require('path')`
 }
 
 ```
-6.
-###  `path.join(__dirname, 'database', 'mongodb', 'db.js')` -> Join bu faylni nomiga yana nom qoshib ketadi.
+
+6. ###  `path.join(__dirname, 'database', 'mongodb', 'db.js')` -> Join bu faylni nomiga yana nom qoshib ketadi.
 
 ```bash
 C:\Users\hp\Desktop\node js\modules\database\mongodb\db.js
@@ -171,8 +171,8 @@ Bu module orqali biz fileni yarata olamiz, filega malumotlar qosha olamiz, filen
 
 Birinchi bo'lib file systemni **fs** import qilishimiz kerak bo'ladi `const fs = require('fs')` 
 
-1.
-###  Papka yaratish uchun `fs.mkdir()` dan foydalanamiz.
+
+1. ###  Papka yaratish uchun `fs.mkdir()` dan foydalanamiz.
 
 ```bash
 
@@ -182,8 +182,8 @@ fs.mkdir(path.join(__dirname, '/papka'), {}, err => {
 })
 
 ```
-2.
-###  File yaratish uchun `fs.writeFile()` dan foydalanamiz.
+
+2. ###  File yaratish uchun `fs.writeFile()` dan foydalanamiz.
 
 ```bash
 
@@ -193,8 +193,8 @@ fs.writeFile(path.join(__dirname, '/papka', 'text.txt'), 'node js orqali yaratil
  })
 
 ```
-3.
-###  Bosh bir fayl ichidagi malumotni ozgartirish , unga yengi malumot qo'shish `fs.appendFile()` orqali bo'ladi
+
+3. ###  Bosh bir fayl ichidagi malumotni ozgartirish , unga yengi malumot qo'shish `fs.appendFile()` orqali bo'ladi
 
 ```bash
 
@@ -204,8 +204,8 @@ fs.appendFile(path.join(__dirname, '/papka', 'text.txt'), ' hello world', err =>
 })
 
  ```
-4.
-### Fileni ichidagi malumotlarni olish uchun `fs.readFile()` dan foydalanamiz 
+
+4. ### Fileni ichidagi malumotlarni olish uchun `fs.readFile()` dan foydalanamiz 
 
 ```bash
 
@@ -215,8 +215,8 @@ fs.readFile(path.join(__dirname, '/papka', 'text.txt'), 'utf8', (err, data) => {
 })
 
 ```
-4.
-### Fileni nomini o'zgartirish uchun `fs.rename()` dan foydalanamiz
+
+5. ### Fileni nomini o'zgartirish uchun `fs.rename()` dan foydalanamiz
 
 ```bash 
 
@@ -232,14 +232,14 @@ fs.rename(path.join(__dirname, '/papka', 'expensive.txt'), path.join(__dirname, 
 Bu bizga kampyuterning umumiy malumotlarini berib turadi.Masalan hotira, operatsion system, core...
 OS ni ishlatishimiz uchun uni import qilishimiz kerak `var os = require('os')`
 
-1.
-### `os.platform()` -> Bu platformani qaysi operatsion sistemada ishlayotganini korsatib beradi. `windows32`
 
-2.
-### `os.arch()` -> Bu kompyuter bitlarini chiqarib beradi `x64`
+1. ### `os.platform()` -> Bu platformani qaysi operatsion sistemada ishlayotganini korsatib beradi. `windows32`
 
-3.
-### `os.cpus()` -> Bu platforma Core haqida malumot beradi
+
+2. ### `os.arch()` -> Bu kompyuter bitlarini chiqarib beradi `x64`
+
+
+3. ### `os.cpus()` -> Bu platforma Core haqida malumot beradi
 
 ```bash 
 
@@ -259,18 +259,106 @@ OS ni ishlatishimiz uchun uni import qilishimiz kerak `var os = require('os')`
 
 ```
 
-4.
-### `os.freemem()` -> Bu Operatsion systemada qancha bosh joy bor shu ko'rsatadi `539705344`
 
-5.
-### `os.totalmem()` -> Bu kompyuterni umumiy hotirasini aniqlab beradi `7886458880`
+4. ### `os.freemem()` -> Bu Operatsion systemada qancha bosh joy bor shu ko'rsatadi `539705344`
 
+5. ### `os.totalmem()` -> Bu kompyuterni umumiy hotirasini aniqlab beradi `7886458880`
 
-6.
-### `os.uptime()` -> Bu Operation sistema ishga tushganiga qancha bo'lgani haqida malumot beradi `539815`
+6. ### `os.uptime()` -> Bu Operation sistema ishga tushganiga qancha bo'lgani haqida malumot beradi `539815`
 
 # 8.Events module nima ?
+
+Eventslar odatda biron bir funksiya yaratib , uni ishlatish uchun ishlatilinadi.
+Har doimgidek eventslarni import qilib olishimiz kerak `const EventEmitter = require('events')` va import qilingan classdan extend qilib olishimiz kerak boladi.
+
+```bash
+
+const EventEmitter = require('events')
+
+
+// EventEmitterdan meros olish
+class NewEmitter extends EventEmitter {}
+
+// instance obyekt
+const newEmitter = new NewEmitter()
+
+```
+
+**Eventslarni** yaratish uchun **on** methodidan foydalanamiz.On methodi **2ta argument** qabul qiladi.Birinchi **argument nom** yani uni chaqirmoqchi bolsak bitta o'ziga hos nom berishimiz kerak boladi.Ikkinchi argument bu **arrow** funksiya eventni ishlatganimizda Arrow funksiya ichida yozilgan malumot chiqadi. 
+Endilikda uni ishlatishimiz uchun **emit** methodidan foydalanamiz.**EMIT** bitta argument qabul qiladi nima nom berib ishlatishimiz.
+
+```bash
+
+// Event listener
+newEmitter.on('hello', () => {
+    console.log('hello world')
+})
+
+// Qabul qilib olish
+newEmitter.emit('hello')
+
+```
+
 # 9.URL module nima ?
+
+URL module bu saytni linklari boladi.Birinchi navbat uni import qilib olamiz.
+`const url = require('url)`.Endilikda uni **new** constructori orqali ishlatamiz.
+
+```bash
+
+const url = require('url')
+
+const newUrl = new URL('http://fozilkhon.uz:5000/users/user.html?name=Fozil&status=active')
+
+```
+
+1. ***`newUrl.href` -> bu method saytni linkini olib beradi `http://fozilkhon.uz:5000/users/user.html?name=Fozil&status=active`***
+2. ***`newUrl.hostname` -> bu method saytni host nameini olib beradi `fozilkhon.uz`***
+3. ***`newUrl.host` -> bu method saytni host nameni olib beradi faqat tepadigisi bilan farqi uni porti bilan olib beradi `fozilkhon.uz:5000`***
+4. ***`newUrl.pathname` -> bu method saytni domen namedan keyin slash bilan davom etadigan routelarini olib beradi `/users/user.html` ***
+5. ***`newUrl.search` -> bu method saytni query parametrini oladi `name=Fozil&status=active` ***
+6. ***`newUrl.searchParams` -> bu method saytni queryni object korinishiga otkazish uchun ishlatamiz `URLSearchParams { 'name' => 'Fozil', 'status' => 'active' }`  ***
+7. ***`newUrl.searchParams.append` -> bu method query parametiga qiymat qoshadi ***
+8. ***`newUrl.searchParams.forEach` -> bu method query parametrini siklda aylantirib beradi ***
+
+```bash
+const url = require('url')
+
+
+const newUrl = new URL('http://fozilkhon.uz:5000/users/user.html?name=Fozil&status=active')
+
+//host linkni olib beradki, url ni olib beradi
+console.log(newUrl.href);
+
+// host nameni olib beradi + port bilan
+console.log(newUrl.host);
+
+
+// host nameni ozini olib beradi
+console.log(newUrl.hostname);
+
+
+//path bu domen namedan keyin slash bilan davom etadigan route
+console.log(newUrl.pathname)
+
+//query parametri
+console.log(newUrl.search)
+
+//queryni object korinishiga otkazish uchun
+console.log(newUrl.searchParams);
+
+//add query
+newUrl.searchParams.append('age', 15)
+console.log(newUrl.searchParams);
+
+//skil aylantirish
+newUrl.searchParams.forEach((key, value) => {
+    console.log(`${key} : ${value}`)
+})
+
+
+```
+
 # 10.HTTP module nima ?
 # 11.Nodemon qanday kutubxona ?
 # 12.UUID qanday kutubxona ?
